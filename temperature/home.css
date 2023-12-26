@@ -1,0 +1,88 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('back.jpg');
+}
+#error{
+    display: none;
+}
+.temp{
+    text-align: center;
+    margin-bottom: 30px;
+    color: antiquewhite;
+}
+.form{
+    width: 36%;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-size: 23px;
+    padding: 20px 20px;
+    background: #b2a2b8;
+    border-radius: 23px;
+}
+label{
+    display: inline-block;
+    width: 140px;
+    font-weight: 600;
+    font-family: sans-serif;
+    color: #323232;
+}
+input{
+    border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 20px;
+  padding: 4px 3px;
+  color: #323232;
+  background: #e7e7e7;
+}
+.Submit{
+    width: 100px;
+    margin: auto;
+    font-size: 24px;
+    border-radius: 20px;
+    background-color: #dfdfdf;
+    color: black;
+    border: 2px red;
+    padding: 3px 5px;
+}
+#error h2{
+    color: rgb(255, 68, 68);
+    font-size: 20px;
+}
+.mySelect{
+    width: calc(100% - 197px);
+    padding: 2px 4px;
+    font-size: 20px;
+    border-radius: 4px;
+    margin-bottom: 7px;
+    color: #323232;
+    background: #e7e7e7;
+}
+.des{
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+}
+textarea{
+    width: 50%;
+    margin-top: 5px;
+    text-align: start;
+}
+@media only screen and (max-width: 1200px) and (min-width: 800px)  {
+    .form{
+        width: 600px;
+    }
+}
+@media only screen and (max-width: 800px) and (min-width: 700px)  {
+    .form{
+        width: 600px;
+    }
+}
+

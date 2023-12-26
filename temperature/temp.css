@@ -1,0 +1,55 @@
+.flitheader{
+}
+.header{
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+.flitheader{
+    font-size: 21px;
+    font-family: none;
+    width: 60%;
+    text-align: center;
+}
+.image > img{
+    width: 100px;
+    height: 93px;
+    border-radius: 5px;
+}
+.row{
+    display: flex;
+    width: 40%;
+    font-size: 19px;
+}
+.left{
+    width: 45%;
+}
+.datas{
+    width: 33%;
+    display: flex;
+}
+ul{
+    list-style-type: none;
+    padding: 0px
+}
+.sr{
+   width: 19%;
+}
+.datereading{
+    width: 42%;
+}
+#srno,#srno2,#srno3,#srno4{
+    width: 40px;
+    text-align: center;
+}
+.datereading > h3{
+    text-align: center;
+}
+#UnList > li{
+    display: flex;
+    padding: 0px 8px;
+    justify-content: space-around;
+}
+#templist > li{
+    padding-left: 23px;
+}

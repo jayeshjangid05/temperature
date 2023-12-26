@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
+      rel="stylesheet">
+    <style>
+
+    .header {
+      width: 30%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 13px;
+    }
+
+    .flitheader {
+      font-size: 21px;
+      font-family: none;
+      width: 60%;
+      text-align: center;
+    }
+
+    .image>img {
+      width: 100px;
+      height: 93px;
+      border-radius: 5px;
+    }
+
+    .row {
+      display: flex;
+      width: 40%;
+      font-size: 15px;
+      margin: 2px 0px;
+      /* font-family: 'Open Sans', sans-serif;
+      font-family: 'PT Serif', serif; */
+      font-family: math;
+      font-weight: 500;
+    }
+    .left {
+      width: 45%;
+    }
+    .datas {
+      width: 33%;
+      display: flex;
+      font-size: 14px;
+      margin-top: 15px;
+      display: none; /* aad by jayesh */
+    }
+    ul {
+      list-style-type: none;
+      padding: 0px
+    }
+    .sr {
+      width: 11%;
+      padding-left: 17px;
+    }
+    .datereading {
+      width: 39%;
+    }
+    #srno,#srno1,#srno2,#srno3{
+      width: 40px;
+      text-align: center;
+    }
+    .datereading>h3 {
+      text-align: center;
+    }
+    #UnList>li,  #UnList2>li,  #UnList3>li{
+      display: flex;
+      padding: 0px 8px;
+      justify-content: space-around;
+      margin: 2px auto !important;
+    }
+
+    #templist>li {
+      padding-left: 23px;
+    }
+
+    #tempsheet {
+      width: 1368px;
+      font-family: 'Roboto', sans-serif;
+    }
+    .flitheader > h1{
+      font-weight: 500;
+      font-family: math;
+    }
+    #UnList>li,#srno li,#templist li{
+      margin: 2px auto;
+    }
+    #UnList2>li,#srno2 li,#templist2 li{
+      margin: 2px auto;
+    }
+    #UnList3>li,#srno1 li,#templist3 li{
+      margin: 2px auto;
+    }
+    #UnList,#srno,#templist,#UnList2,#UnList3{
+      margin: 0px;
+
+    }
+    .sr h3,.datereading h3,.reading h3{
+      margin: 5px 0px 0px 0px !important;
+      font-weight: 400;
+      font-size: 14px;
+    }
+    .page-break {
+  break-after: always;
+}
+.endrow{
+  width: 49%;
+}
+.srow{
+  width: 49%;
+}
+.newClass{
+  display: flex;
+    column-gap: 10px;
+    font-size: 15px;
+    padding-top: 1.59px;
+  }
+.datetime{
+  margin-left: 17px;
+}
+.tempreading{
+  margin-left: 43px;
+}
+.serialwidth{
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 11px;
+}
+.tableheader{
+  display: flex;
+  flex-direction: row;
+  text-align: start;
+  column-gap: 70px;
+  margin-left: 24px;
+  margin-bottom: 0px;
+  font-family: math;
+  font-weight: 500;
+
+}
+#testDatas{
+  margin-left: 25px;
+  font-family: math;
+  font-weight: 500;
+}
+  </style>
+
+    <!-- Html2Pdf -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js"
+      integrity="sha512vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A=="
+      crossorigin="anonymous">
+    </script>
+    <body onload="GetData()">
+      <button onclick="getpdf()">Download</button>
+      <div id="tempsheet">
+        <div class="header"
+          style="width: 30%; display: flex; align-items: center">
+          <div class="flitheader" style="    font-size: 21px;
+        font-family: none;
+        width: 60%;
+        text-align: center;">
+            <h1>Flitrack</h1>
+          </div>
+          <div class="image">
+            <img style="width: 100px;
+          height: 93px;
+          border-radius: 5px;" src="./logo.png" alt srcset />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left">
+            <span>Date: </span>
+            <span id="currentDate"></span>
+          </div>
+          <!-- <div class="html2pdf__page-break"></div> -->
+          <div class="rigth">
+            <span>Vehicle No:</span>
+            <span id="vehNo"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left" style="width: 45%">
+            <span>Sample Rate:</span>
+            <span>00:15:00</span>
+            <!-- <div class="html2pdf__page-break"></div> -->
+
+          </div>
+          <div class="rigth">
+            <span>Fleet ID:</span>
+            <span id="fleetid"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left">
+            <span>Temperature:</span>
+            <span>12 to 16</span>
+          </div>
+        </div>
+        <div class="row srow">
+          <span>Start Trip:&nbsp;</span>
+          <span id="startlocation"></span>
+        </div>
+        <div class="row endrow">
+          <span>End Trip:&nbsp; </span>
+          <span id="endtrip"></span>
+        </div>
+        <div>
+          <div class="datas">
+            <div class="sr">
+              <h3>Sr. No.</h3>
+              <ul id="srno"></ul>
+            </div>
+            <div class="datereading">
+              <h3>Date</h3>
+              <ul id="UnList"></ul>
+            </div>
+            <div class="reading">
+              <h3>Temperature (°C)</h3>
+              <ul id="templist"></ul>
+            </div>
+            <div id="d"></div>
+          </div>
+          <ul class="tableheader">
+            <li>Sr. No.</li>
+            <li>Date</li>
+            <li> Temperature (°C)</li>
+          </ul>
+          <div id="testDatas"></div>
+
+ 
+
+
+ 
+
+        </div>
+      </div>
+      <script src="html2pdf.bundle.js"></script>
+
+      <script src="temp.js"></script>
+      <script>
+    // function getpdf() {
+    //   var element = document.getElementById('tempsheet');
+    //   html2pdf(element);
+    // } 
+  </script>
+      <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script> -->
+    </body>
+
+  </html>
